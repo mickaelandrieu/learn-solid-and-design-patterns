@@ -47,6 +47,10 @@ abstract class Pizza
 
     public function setSize(string $size) : Pizza
     {
+        if ($this->size === 'M' && $size === 'XL') {
+            $this->price += 2.0;
+        }
+
         $this->size = $size;
 
         return $this;

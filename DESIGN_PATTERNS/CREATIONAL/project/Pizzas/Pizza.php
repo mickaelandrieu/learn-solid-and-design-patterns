@@ -47,6 +47,7 @@ abstract class Pizza
 
     public function setSize(string $size) : Pizza
     {
+        // @TODO : Ajouter 2 euros si la taille passe en "XL"
         $this->size = $size;
 
         return $this;
