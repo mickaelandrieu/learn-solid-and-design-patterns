@@ -12,7 +12,7 @@ $userArrayRepository = new UserRepository(new ArrayClient());
 $userJSONRepository = new UserRepository(new JSONClient());
 
 it('Array Client Works as expected', count($userArrayRepository->getUsers()) === 3);
-it('JSON Client Works as expected', count($userArrayRepository->getUsers()) === 3);
+it('JSON Client Works as expected', count($userJSONRepository->getUsers()) === 3);
 
 it(
     'Array Client : retrieve user by email',
@@ -22,6 +22,6 @@ it(
 
 it(
     'JSON Client : retrieve user by email',
-    $userArrayRepository->getUser('mathieu.nebra@exemple.com')
+    $userJSONRepository->getUser('mathieu.nebra@exemple.com')
         ->describe() === 'Mathieu Nebra (mathieu.nebra@exemple.com)'
 );
